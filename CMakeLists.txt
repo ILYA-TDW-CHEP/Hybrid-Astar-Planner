@@ -2,12 +2,15 @@ cmake_minimum_required(VERSION 3.20)
 
 project(hybrid_astar_planner VERSION 0.1.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(hybrid_astar_core INTERFACE)
-target_include_directories(hybrid_astar_core INTERFACE
+add_library(hybrid_astar_core
+    src/occupancy_grid.cpp
+    src/vehicle_model.cpp
+)
+target_include_directories(hybrid_astar_core PUBLIC
     ${PROJECT_SOURCE_DIR}/include
 )
 
@@ -32,7 +35,11 @@ if(BUILD_TESTING)
     FetchContent_MakeAvailable(googletest)
 
     add_executable(hybrid_astar_tests
+        tests/test_angle_utils.cpp
+        tests/test_math_utils.cpp
+        tests/test_occupancy_grid.cpp
         tests/test_pose.cpp
+        tests/test_vehicle_model.cpp
     )
     target_link_libraries(hybrid_astar_tests PRIVATE
         hybrid_astar_core
