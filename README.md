@@ -1,39 +1,41 @@
 # Hybrid A* Planner
 
-Portfolio project: a C++ Hybrid A* planner for autonomous vehicle path planning in a 2D occupancy grid, with Python visualization, tests, scenarios, and benchmarks.
+Hybrid A* planner на C++ для планирования траектории автономного автомобиля в 2D occupancy grid, с Python-визуализацией, сценариями, тестами и benchmark'ами.
 
-The project is intentionally built in small engineering steps. This first stage only bootstraps the workspace: repository layout, CMake targets, a minimal C++ type, and one unit test.
+Проект строится вокруг C++ core-библиотеки планировщика, явных форматов данных для сценариев/результатов и лёгких Python-утилит для визуализации и анализа benchmark'ов.
 
 ## Roadmap
 
-1. Bootstrap workspace, CMake, tests, and scenario placeholders.
-2. Add geometry utilities, angle helpers, and occupancy grid basics.
-3. Add vehicle parameters, kinematic bicycle model, and footprint geometry.
-4. Add motion primitives and simple collision checking.
-5. Add a first heuristic and path/result export format.
-6. Implement baseline Hybrid A* search.
-7. Add Python plotting and animation scripts.
-8. Add benchmark scenarios and search statistics.
-9. Explore smoothing and coarse-to-fine refinement.
+1. `[готово]` Bootstrap workspace: структура репозитория, CMake, GoogleTest, минимальный executable, scenario-заглушки.
+2. `[готово]` Common utilities: `Pose2D`, математические helpers, нормализация углов и unit tests.
+3. `[готово]` Occupancy grid basics: размеры карты, resolution, occupied/free cells, bounds checking, world/grid преобразования.
+4. `[готово]` Vehicle model basics: параметры автомобиля и простой kinematic bicycle step.
+5. `[готово]` Vehicle footprint: oriented rectangle автомобиля по `Pose2D` и `VehicleParams`.
+6. `[следующий этап]` Collision checking: проверка footprint against occupancy grid.
+7. `[в плане]` Motion primitives: forward/reverse successors на основе vehicle model.
+8. `[в плане]` Heuristic и path/result export.
+9. `[в плане]` Baseline Hybrid A* search.
+10. `[в плане]` Python plotting, animation scripts и benchmark statistics.
+11. `[в плане]` Smoothing и coarse-to-fine refinement.
 
-## Repository Structure
+## Структура Репозитория
 
 ```text
 .
-├── configs/        # Planner and benchmark configuration files
-├── docs/           # Design notes and algorithm documentation
-├── include/        # Public C++ headers
-├── src/            # C++ implementation and application entrypoint
+├── configs/        # Конфигурации planner'а и benchmark'ов
+├── docs/           # Заметки по дизайну и алгоритмам
+├── include/        # Публичные C++ headers
+├── src/            # Реализация C++ и entrypoint приложения
 ├── tests/          # Unit tests
-├── scenarios/      # Input scenario JSON files
-├── scripts/        # Python visualization and benchmark utilities
-├── results/        # Generated planner outputs
-└── third_party/    # Optional vendored dependencies or notes
+├── scenarios/      # Входные JSON-сценарии
+├── scripts/        # Python-утилиты для визуализации и benchmark'ов
+├── results/        # Сгенерированные результаты planner'а
+└── third_party/    # Опциональные внешние зависимости или заметки
 ```
 
-## Build
+## Сборка
 
-The first CMake configure may download GoogleTest through `FetchContent`.
+Первый запуск CMake может скачать GoogleTest через `FetchContent`.
 
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
@@ -42,9 +44,13 @@ ctest --test-dir build --output-on-failure
 ./build/hybrid_astar_app
 ```
 
-## Current Status
+## Текущий Статус
 
-- C++17 project scaffold is in place.
-- `hybrid_astar_app` builds as a minimal executable.
-- `hybrid_astar_tests` contains the first GoogleTest unit tests.
-- Scenario JSON files are placeholders and are not loaded by C++ yet.
+- C++ project scaffold готов.
+- Common math/angle utilities покрыты unit tests.
+- Occupancy grid реализует базовую карту и преобразования world/grid.
+- Vehicle model реализует базовый kinematic bicycle step.
+- Vehicle footprint вычисляет углы прямоугольного footprint автомобиля.
+- `hybrid_astar_app` собирается как минимальное приложение.
+- `hybrid_astar_tests` содержит GoogleTest-based unit tests; сейчас проходит `32/32` теста.
+- Scenario JSON файлы пока являются заглушками и ещё не загружаются из C++.

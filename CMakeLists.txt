@@ -8,6 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_library(hybrid_astar_core
     src/occupancy_grid.cpp
+    src/footprint.cpp
     src/vehicle_model.cpp
 )
 target_include_directories(hybrid_astar_core PUBLIC
@@ -36,6 +37,7 @@ if(BUILD_TESTING)
 
     add_executable(hybrid_astar_tests
         tests/test_angle_utils.cpp
+        tests/test_footprint.cpp
         tests/test_math_utils.cpp
         tests/test_occupancy_grid.cpp
         tests/test_pose.cpp
