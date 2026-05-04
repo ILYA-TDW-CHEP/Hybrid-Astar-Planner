@@ -1,0 +1,43 @@
+# Build artifacts
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+_deps/
+compile_commands.json
+
+# Compiled objects and binaries
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.o
+*.obj
+
+# Python cache and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editor and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Local agent/session metadata
+.agents/
+.codex/
+
+# Generated planner output
+results/*
+!results/.gitkeep

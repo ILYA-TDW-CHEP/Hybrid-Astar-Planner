@@ -1,0 +1,29 @@
+{
+  "name": "narrow_passage_placeholder",
+  "map": {
+    "resolution": 0.5,
+    "width": 50,
+    "height": 20,
+    "origin": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "obstacles": []
+  },
+  "start": {
+    "x": 2.0,
+    "y": 5.0,
+    "theta": 0.0
+  },
+  "goal": {
+    "x": 22.0,
+    "y": 5.0,
+    "theta": 0.0
+  },
+  "vehicle": {
+    "length": 4.5,
+    "width": 2.0,
+    "wheelbase": 2.7,
+    "max_steering_angle": 0.6
+  }
+}

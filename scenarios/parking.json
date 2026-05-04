@@ -1,0 +1,29 @@
+{
+  "name": "parking_placeholder",
+  "map": {
+    "resolution": 0.5,
+    "width": 40,
+    "height": 30,
+    "origin": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "obstacles": []
+  },
+  "start": {
+    "x": 2.0,
+    "y": 2.0,
+    "theta": 0.0
+  },
+  "goal": {
+    "x": 15.0,
+    "y": 10.0,
+    "theta": 1.57079632679
+  },
+  "vehicle": {
+    "length": 4.5,
+    "width": 2.0,
+    "wheelbase": 2.7,
+    "max_steering_angle": 0.6
+  }
+}
