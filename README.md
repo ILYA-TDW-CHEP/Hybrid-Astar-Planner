@@ -11,8 +11,8 @@ Hybrid A* planner на C++ для планирования траектории 
 3. `[готово]` Occupancy grid basics: размеры карты, resolution, occupied/free cells, bounds checking, world/grid преобразования.
 4. `[готово]` Vehicle model basics: параметры автомобиля и простой kinematic bicycle step.
 5. `[готово]` Vehicle footprint: oriented rectangle автомобиля по `Pose2D` и `VehicleParams`.
-6. `[следующий этап]` Collision checking: проверка footprint against occupancy grid.
-7. `[в плане]` Motion primitives: forward/reverse successors на основе vehicle model.
+6. `[готово]` Collision checking: проверка footprint against occupancy grid.
+7. `[следующий этап]` Motion primitives: forward/reverse successors на основе vehicle model.
 8. `[в плане]` Heuristic и path/result export.
 9. `[в плане]` Baseline Hybrid A* search.
 10. `[в плане]` Python plotting, animation scripts и benchmark statistics.

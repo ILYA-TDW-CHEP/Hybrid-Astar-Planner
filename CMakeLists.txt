@@ -10,6 +10,7 @@ add_library(hybrid_astar_core
     src/occupancy_grid.cpp
     src/footprint.cpp
     src/vehicle_model.cpp
+    src/collision_checker.cpp
 )
 target_include_directories(hybrid_astar_core PUBLIC
     ${PROJECT_SOURCE_DIR}/include
@@ -37,6 +38,7 @@ if(BUILD_TESTING)
 
     add_executable(hybrid_astar_tests
         tests/test_angle_utils.cpp
+        tests/test_collision_checker.cpp
         tests/test_footprint.cpp
         tests/test_math_utils.cpp
         tests/test_occupancy_grid.cpp
