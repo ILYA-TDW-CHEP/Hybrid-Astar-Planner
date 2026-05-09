@@ -12,8 +12,8 @@ Hybrid A* planner на C++ для планирования траектории 
 4. `[готово]` Vehicle model basics: параметры автомобиля и простой kinematic bicycle step.
 5. `[готово]` Vehicle footprint: oriented rectangle автомобиля по `Pose2D` и `VehicleParams`.
 6. `[готово]` Collision checking: проверка footprint against occupancy grid.
-7. `[следующий этап]` Motion primitives: forward/reverse successors на основе vehicle model.
-8. `[в плане]` Heuristic и path/result export.
+7. `[готово]` Motion primitives: forward/reverse successors на основе vehicle model.
+8. `[следующий этап]` Heuristic и path/result export.
 9. `[в плане]` Baseline Hybrid A* search.
 10. `[в плане]` Python plotting, animation scripts и benchmark statistics.
 11. `[в плане]` Smoothing и coarse-to-fine refinement.
