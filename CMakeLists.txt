@@ -9,6 +9,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(hybrid_astar_core
     src/occupancy_grid.cpp
     src/footprint.cpp
+    src/heuristic.cpp
+    src/hybrid_astar.cpp
+    src/result_exporter.cpp
     src/vehicle_model.cpp
     src/collision_checker.cpp
     src/motion_primitive.cpp
@@ -41,10 +44,13 @@ if(BUILD_TESTING)
         tests/test_angle_utils.cpp
         tests/test_collision_checker.cpp
         tests/test_footprint.cpp
+        tests/test_heuristic.cpp
+        tests/test_hybrid_astar.cpp
         tests/test_math_utils.cpp
         tests/test_motion_primitive.cpp
         tests/test_occupancy_grid.cpp
         tests/test_pose.cpp
+        tests/test_result_exporter.cpp
         tests/test_vehicle_model.cpp
     )
     target_link_libraries(hybrid_astar_tests PRIVATE
